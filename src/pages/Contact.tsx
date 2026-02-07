@@ -51,9 +51,8 @@ export function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h3 className="text-2xl text-purple-300 mb-6">Contactenme</h3>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Estoy abierto a nuevas oportunidades y colaboraciones. Si tienes alguna pregunta 
+                Estoy abierto a nuevas oportunidades. Si tienes alguna pregunta 
                 o simplemente quieres saludar, no dudes en contactarme!
               </p>
 
@@ -142,7 +141,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/30 rounded-xl text-gray-300 focus:outline-none focus:border-purple-500 transition-colors"
-                    placeholder="your.email@example.com"
+                    placeholder="tu.email@ejemplo.com"
                   />
                 </div>
                 <div className="mb-6">

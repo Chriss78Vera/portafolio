@@ -81,9 +81,6 @@ npm run dev
 # Build de producción
 npm run build
 ```
-
-El diseño original está basado en el proyecto de Figma: [Dark-themed Portfolio Website](https://www.figma.com/design/AnEoJxSLw6mehHP4S0Rr9g/Dark-themed-Portfolio-Website).
-
 ---
 
 ## Stack del proyecto

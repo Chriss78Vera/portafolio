@@ -30,21 +30,14 @@ export function Hero() {
               Full Stack Developer
             </p>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-            Soy Tecnólogo Superior en Desarrollo de Software, especializado en el desarrollo de aplicaciones web y en la implementación de backend, con experiencia en integraciones basadas en microservicios y microfrontends.
+              Soy Tecnólogo Superior en Desarrollo de Software, especializado en el desarrollo de aplicaciones web y en la implementación de backend, con experiencia en integraciones basadas en microservicios y microfrontends.
             </p>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
-              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center gap-2">
-                <Download size={20} />
-                Download CV
-              </button>
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="px-6 py-3 bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-full text-gray-300 hover:bg-white/10 transition-all flex items-center gap-2"
-              >
+              <button onClick={() => scrollToSection('projects')} className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center gap-2">
                 <FolderOpen size={20} />
-                View Projects
+                Ver Proyectos
               </button>
             </div>
 
@@ -86,7 +79,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur-2xl opacity-30"></div>
               <div className="relative bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-3xl p-2 shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1617925357736-8a4ea869b800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDF8fHx8MTc3MDM1NzA4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="https://res.cloudinary.com/dzsktn4sw/image/upload/v1770435179/Perfil_Page_exfghc.png"
                   alt="Professional portrait"
                   className="rounded-3xl w-full max-w-md"
                 />

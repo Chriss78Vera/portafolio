@@ -25,19 +25,19 @@ export function Projects() {
     {
       title: 'Zendesk Mobile',
       description: 'Proyecto para visualizar los tickets de zendesk desde una aplicación móvil, con backend en Node.js y en React Native con expo.',
-      image: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RlJTIwcHJvZ3JhbW1pbmclMjBzY3JlZW58ZW58MXx8fHwxNzcwMzc5ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: 'https://res.cloudinary.com/dzsktn4sw/image/upload/v1770434623/Zendesk_App_ux9kft.png',
       tech: ['Node.js', 'React Native', 'Expo', 'Zendesk API'],
     },
     {
       title: 'Aloundra Tour',
       description: 'Proyecto de administración de reservas de viajes, con backend en Java Spring Boot y PostgreSQL, frontend en React Typescript.',
-      image: 'https://images.unsplash.com/photo-1665470909939-959569b20021?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NzAzNDg1NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: 'https://res.cloudinary.com/dzsktn4sw/image/upload/v1770434198/Alondra_Tour_bv4eak.png',
       tech: ['React', 'Java 18 ', 'Spring Boot', 'PostgreSQL'],
     },
     {
       title: 'MainSoft',
       description: 'Proyecto de tesis enfocado en el control de asistencia del personal, mediante una aplicación móvil que permite a los empleados registrar horarios de ingreso, salida y almuerzo, con notificaciones automáticas. Desarrollado con React Native, Expo y Firebase, y publicado en Google Play.',
-      image: 'https://images.unsplash.com/photo-1661246627162-feb0269e0c07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzcwMzgwMjI0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: 'https://res.cloudinary.com/dzsktn4sw/image/upload/v1770433764/MainSoft_hda1yj.png',
       tech: ['React Native', 'Expo', 'Firebase'],
     },
   ];
@@ -57,7 +57,7 @@ export function Projects() {
           <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-12 rounded-full"></div>
 
           {/* Primeros 3 proyectos */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             {projects.slice(0, 3).map((project, index) => (
               <motion.div
                 key={project.title}
@@ -67,13 +67,12 @@ export function Projects() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-2xl overflow-hidden hover:bg-white/10 transition-all group"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden bg-gray-900/50 flex items-center justify-center">
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl text-purple-300 mb-2">{project.title}</h3>
@@ -94,8 +93,8 @@ export function Projects() {
           </div>
 
           {/* División */}
-          <div className="border-t border-purple-500/30 my-12 max-w-md mx-auto"></div>
-          <h2 className="text-4xl md:text-5xl text-center mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <div className="border-t border-purple-500/30 my-16 max-w-md mx-auto"></div>
+          <h2 className="text-4xl md:text-5xl text-center mb-4 mt-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             Proyectos Personales
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-12 rounded-full"></div>
@@ -110,13 +109,12 @@ export function Projects() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-2xl overflow-hidden hover:bg-white/10 transition-all group"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden bg-gray-900/50 flex items-center justify-center">
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl text-purple-300 mb-2">{project.title}</h3>
