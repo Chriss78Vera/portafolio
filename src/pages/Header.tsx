@@ -5,10 +5,16 @@ import { motion } from 'motion/react';
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
- const menuItems = [ {name: 'Inicio', id: 'home'}, {name: 'Sobre mí', id: 'about-me'}, {name: 'Proyectos', id: 'projects'}, {name: 'Habilidades', id: 'skills'}, {name: 'Educación', id: 'education'}, {name: 'Experiencia', id: 'experience'}];
-  const scrollToSection = (item: string) => {
-    const sectionId = item.toLowerCase().replace(' ', '-');
-    const section = document.getElementById(sectionId);
+  const menuItems = [
+    { name: 'Inicio', id: 'home' },
+    { name: 'Sobre mí', id: 'about-me' },
+    { name: 'Proyectos', id: 'projects' },
+    { name: 'Habilidades', id: 'skills' },
+    { name: 'Educación y experiencia', id: 'education' },
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId.toLowerCase());
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
@@ -48,7 +54,7 @@ export function Header() {
           <motion.button
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            onClick={() => scrollToSection('Contact')}
+            onClick={() => scrollToSection('contact')}
             className="hidden md:block px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all"
           >
             Contacto
@@ -72,15 +78,15 @@ export function Header() {
           >
             {menuItems.map((item) => (
               <button
-                key={item}
+                key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="text-gray-300 hover:text-purple-400 transition-colors text-left"
               >
-                {item}
+                {item.name}
               </button>
             ))}
             <button
-              onClick={() => scrollToSection('Contact')}
+              onClick={() => scrollToSection('contact')}
               className="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white text-left"
             >
               Contacto
