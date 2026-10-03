@@ -7,8 +7,10 @@ import { Education } from './pages/Education';
 import { Contact } from './pages/Contact';
 import { Footer } from './pages/Footer';
 import React from 'react';
+import { LanguageProvider } from './i18n';
 export default function App() {
   return (
+    <LanguageProvider>
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Background Effects */}
       <div className="fixed inset-0 -z-10">
@@ -28,5 +30,6 @@ export default function App() {
       </main>
       <Footer />
     </div>
+    </LanguageProvider>
   );
 }

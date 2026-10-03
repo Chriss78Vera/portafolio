@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '../i18n';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const menuItems = [
-    { name: 'Inicio', id: 'home' },
-    { name: 'Sobre mí', id: 'about-me' },
-    { name: 'Proyectos', id: 'projects' },
-    { name: 'Habilidades', id: 'skills' },
-    { name: 'Educación y experiencia', id: 'education' },
+    { name: t.nav.home, id: 'home' }, { name: t.nav.about, id: 'about-me' }, { name: t.nav.projects, id: 'projects' }, { name: t.nav.skills, id: 'skills' }, { name: t.nav.education, id: 'education' }, { name: t.nav.contact, id: 'contact' },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -23,8 +21,8 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-gray-900/70 border-b border-purple-500/20">
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4">
+        <div className="flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:gap-8">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -35,7 +33,7 @@ export function Header() {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center justify-center gap-8">
             {menuItems.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -50,15 +48,12 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            onClick={() => scrollToSection('contact')}
-            className="hidden md:block px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all"
-          >
-            Contacto
-          </motion.button>
+          <div className="hidden md:flex items-center justify-end gap-3">
+          <div className="flex items-center gap-1 rounded-full border border-purple-500/30 bg-white/5 p-1" aria-label={t.nav.language}>
+            <button onClick={() => setLanguage('es')} className={`px-3 py-1 rounded-full text-xs transition-all ${language === 'es' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'}`}>ES</button>
+            <button onClick={() => setLanguage('en')} className={`px-3 py-1 rounded-full text-xs transition-all ${language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'}`}>EN</button>
+          </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -85,12 +80,7 @@ export function Header() {
                 {item.name}
               </button>
             ))}
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white text-left"
-            >
-              Contacto
-            </button>
+            <div className="flex gap-2"><button onClick={() => setLanguage('es')} className={`px-3 py-1 rounded-full text-xs ${language === 'es' ? 'bg-purple-600' : 'bg-white/10'}`}>ES</button><button onClick={() => setLanguage('en')} className={`px-3 py-1 rounded-full text-xs ${language === 'en' ? 'bg-blue-600' : 'bg-white/10'}`}>EN</button></div>
           </motion.div>
         )}
       </nav>

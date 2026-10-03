@@ -2,7 +2,9 @@ import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 import React from 'react';
+import { useLanguage } from '../i18n';
 export function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,7 +14,7 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Mock form submission
-    alert('Message sent! (This is a demo)');
+    alert(t.contact.sent);
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -39,7 +41,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl text-center mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Contacto
+            {t.contact.title}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-12 rounded-full"></div>
 
@@ -52,8 +54,7 @@ export function Contact() {
               transition={{ delay: 0.2 }}
             >
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Estoy abierto a nuevas oportunidades. Si tienes alguna pregunta 
-                o simplemente quieres saludar, no dudes en contactarme!
+                {t.contact.intro}
               </p>
 
               <div className="space-y-4 mb-8">
@@ -116,7 +117,7 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8">
                 <div className="mb-6">
                   <label htmlFor="name" className="block text-gray-300 mb-2">
-                    Nombre
+                    {t.contact.name}
                   </label>
                   <input
                     type="text"
@@ -126,12 +127,12 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/30 rounded-xl text-gray-300 focus:outline-none focus:border-purple-500 transition-colors"
-                    placeholder="Tu nombre"
+                    placeholder={t.contact.namePlaceholder}
                   />
                 </div>
                 <div className="mb-6">
                   <label htmlFor="email" className="block text-gray-300 mb-2">
-                    Correo electrónico
+                    {t.contact.email}
                   </label>
                   <input
                     type="email"
@@ -141,12 +142,12 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/30 rounded-xl text-gray-300 focus:outline-none focus:border-purple-500 transition-colors"
-                    placeholder="tu.email@ejemplo.com"
+                    placeholder={t.contact.emailPlaceholder}
                   />
                 </div>
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-gray-300 mb-2">
-                    Mensaje
+                    {t.contact.message}
                   </label>
                   <textarea
                     id="message"
@@ -156,14 +157,14 @@ export function Contact() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 bg-gray-900/50 border border-purple-500/30 rounded-xl text-gray-300 focus:outline-none focus:border-purple-500 transition-colors resize-none"
-                    placeholder="Tu mensaje..."
+                    placeholder={t.contact.messagePlaceholder}
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2"
                 >
-                  Enviar mensaje <Send size={20} />
+                  {t.contact.send} <Send size={20} />
                 </button>
               </form>
             </motion.div>

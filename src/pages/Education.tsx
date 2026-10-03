@@ -1,52 +1,55 @@
 import { motion } from 'motion/react';
 import { GraduationCap, Briefcase, Award } from 'lucide-react';
 import React from 'react';
+import { useLanguage } from '../i18n';
 export function Education() {
+  const { t, language } = useLanguage();
+  const isEnglish = language === 'en';
   const timeline = [
     {
       type: 'education',
       icon: GraduationCap,
-      title: 'Tecnólogo en Desarrollo de Software',
+      title: isEnglish ? 'Higher Technologist in Software Development' : 'Tecnólogo en Desarrollo de Software',
       organization: 'Escuela Politécnica Nacional',
-      period: 'abril 2019 - noviembre 2022',
-      description: 'Graduado en la Escuela Politécnica Nacional del Ecuador.',
+      period: isEnglish ? 'April 2019 - November 2022' : 'abril 2019 - noviembre 2022',
+      description: isEnglish ? 'Graduated from the National Polytechnic School of Ecuador.' : 'Graduado en la Escuela Politécnica Nacional del Ecuador.',
       color: 'from-purple-600 to-blue-600',
     },
     {
       type: 'experience',
       icon: Briefcase,
-      title: 'Junior Software Developer | Aplicaciones Móviles & Integraciones API',
+      title: isEnglish ? 'Junior Software Developer | Mobile Applications & API Integrations' : 'Junior Software Developer | Aplicaciones Móviles & Integraciones API',
       organization: 'Clear Minds Consultores',
-      period: 'diciembre 2020 - mayo 2021',
-      description: 'Participé en el desarrollo de aplicaciones móviles contables para clientes empresariales y una entidad bancaria, integrando APIs, desarrollando funcionalidades con React Native, apoyando el backend en Node.js y fortaleciendo habilidades en Java (Maven), trabajando de forma colaborativa y enfocada en el aprendizaje continuo.',
+      period: isEnglish ? 'December 2020 - May 2021' : 'diciembre 2020 - mayo 2021',
+      description: isEnglish ? 'Participated in developing accounting mobile applications for enterprise clients and a banking institution, integrating APIs, building React Native features, supporting the Node.js backend and strengthening Java/Maven skills in a collaborative, continuous-learning environment.' : 'Participé en el desarrollo de aplicaciones móviles contables para clientes empresariales y una entidad bancaria, integrando APIs, desarrollando funcionalidades con React Native, apoyando el backend en Node.js y fortaleciendo habilidades en Java (Maven), trabajando de forma colaborativa y enfocada en el aprendizaje continuo.',
       color: 'from-blue-600 to-cyan-600',
     },
     {
       type: 'experience',
       icon: Briefcase,
-      title: 'Full Stack Developer | Sistemas Contables & Soluciones en la Nube',
+      title: isEnglish ? 'Full Stack Developer | Accounting Systems & Cloud Solutions' : 'Full Stack Developer | Sistemas Contables & Soluciones en la Nube',
       organization: 'Ciro',
-      period: 'abril 2023 - enero 2024',
-      description: 'Mantenimiento y evolución de un sistema contable para el mercado ecuatoriano, resolviendo incidencias funcionales y técnicas, desarrollando backend en Node.js y Laravel, frontend en Vue.js, optimizando consultas MySQL, gestionando proyectos en la nube, brindando soporte a clientes e implementando facturación electrónica conforme a normativas locales, con participación activa en decisiones técnicas y mejoras del sistema.',
+      period: isEnglish ? 'April 2023 - January 2024' : 'abril 2023 - enero 2024',
+      description: isEnglish ? 'Maintained and evolved an accounting system for the Ecuadorian market, resolving functional and technical incidents, developing Node.js and Laravel backend services, building Vue.js frontend features, optimizing MySQL queries, managing cloud projects, supporting clients and implementing electronic invoicing according to local regulations.' : 'Mantenimiento y evolución de un sistema contable para el mercado ecuatoriano, resolviendo incidencias funcionales y técnicas, desarrollando backend en Node.js y Laravel, frontend en Vue.js, optimizando consultas MySQL, gestionando proyectos en la nube, brindando soporte a clientes e implementando facturación electrónica conforme a normativas locales, con participación activa en decisiones técnicas y mejoras del sistema.',
       color: 'from-cyan-600 to-teal-600',
     },
 
     {
       type: 'experience',
       icon: Briefcase,
-      title: 'Full Stack Developer | Arquitectura en Azure & CI/CD | Tech Leader',
+      title: isEnglish ? 'Full Stack Developer | Azure Architecture & CI/CD | Tech Lead' : 'Full Stack Developer | Arquitectura en Azure & CI/CD | Tech Leader',
       organization: 'IXcomercio',
-      period: 'enero 2025 - enero 2026',
-      description: 'Desarrollo de la plataforma TotalCommerce para el sector retail, actuando también como Tech Lead, implementando arquitecturas escalables en Azure basadas en microservicios y micro frontends, desarrollando frontend en React y backend en Node.js, liderando procesos de CI/CD con GitLab, promoviendo un enfoque de Vibe Coding orientado a buenas prácticas, calidad y colaboración, ejecutando pruebas unitarias, resolviendo incidencias, documentando soluciones técnicas y gestionando soporte mediante Zendesk, en un entorno ágil y de mejora continua.',
+      period: isEnglish ? 'January 2024 - Present' : 'enero 2024 - actualidad',
+      description: isEnglish ? 'Developed the TotalCommerce platform for the retail sector while serving as Tech Lead. Implemented scalable Azure architectures based on microservices and microfrontends, developed React frontend and Node.js backend services, led GitLab CI/CD processes, promoted a Vibe Coding approach focused on quality and collaboration, executed unit tests, resolved incidents, documented technical solutions and managed Zendesk support in an agile environment.' : 'Desarrollo de la plataforma TotalCommerce para el sector retail, actuando también como Tech Lead, implementando arquitecturas escalables en Azure basadas en microservicios y micro frontends, desarrollando frontend en React y backend en Node.js, liderando procesos de CI/CD con GitLab, promoviendo un enfoque de Vibe Coding orientado a buenas prácticas, calidad y colaboración, ejecutando pruebas unitarias, resolviendo incidencias, documentando soluciones técnicas y gestionando soporte mediante Zendesk, en un entorno ágil y de mejora continua.',
       color: 'from-cyan-600 to-teal-600',
     },
     {
       type: 'education',
       icon: GraduationCap,
-      title: 'Ingeniero en sistemas de la información',
+      title: isEnglish ? 'Information Systems Engineer' : 'Ingeniero en sistemas de la información',
       organization: 'Universidad Israel',
-      period: 'abril 2025 - presente',
-      description: 'Estudiante de Ingeniería en Sistemas de la Información en la Universidad Israel, con especialidad en desarrollo de software y seguridad informática.',
+      period: isEnglish ? 'April 2025 - Present' : 'abril 2025 - presente',
+      description: isEnglish ? 'Information Systems Engineering student at Universidad Israel, specializing in software development and cybersecurity.' : 'Estudiante de Ingeniería en Sistemas de la Información en la Universidad Israel, con especialidad en desarrollo de software y seguridad informática.',
       color: 'from-purple-600 to-blue-600',
     }
   ];
@@ -61,7 +64,7 @@ export function Education() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl text-center mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Educación y Experiencia
+            {t.education.title}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-12 rounded-full"></div>
 
