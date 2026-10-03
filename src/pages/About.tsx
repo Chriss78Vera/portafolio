@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { Code, Rocket, GraduationCap } from 'lucide-react';
 import React from 'react';
+import { useLanguage } from '../i18n';
 export function About() {
+  const { t } = useLanguage();
+  const highlightIcons = [Code, GraduationCap, Rocket];
   const highlights = [
     {
       icon: Code,
@@ -18,7 +21,7 @@ export function About() {
       title: 'Brindar soluciones eficientes',
       description: 'Me apasiona crear soluciones digitales que realmente aporten valor.',
     },
-  ];
+  ].map((item, index) => ({ ...item, title: t.about.highlights[index][0], description: t.about.highlights[index][1], icon: highlightIcons[index] }));
 
   return (
     <section id="about-me" className="py-20 bg-gradient-to-b from-transparent to-purple-900/10">
@@ -30,7 +33,7 @@ export function About() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl text-center mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Sobre mí
+            {t.about.title}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-12 rounded-full"></div>
 
@@ -43,10 +46,10 @@ export function About() {
               className="bg-white/5 backdrop-blur-sm border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-12 shadow-xl"
             >
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Soy apasionado por crear soluciones digitales que realmente aporten valor. Mi interés por la tecnología nació de la curiosidad por entender cómo funcionan las cosas y hoy se refleja en mi enfoque por construir aplicaciones web eficientes, escalables y bien diseñadas.
+              {t.about.body1}
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
-              Me formé en la Escuela Politécnica Nacional y actualmente continúo mis estudios en la Universidad Israel, combinando la teoría con la práctica en proyectos reales. Disfruto aprender constantemente, adaptarme a nuevas tecnologías y cuidar cada detalle del código, la experiencia de usuario y la arquitectura de las soluciones que desarrollo.
+              {t.about.body2}
               </p>
             </motion.div>
 

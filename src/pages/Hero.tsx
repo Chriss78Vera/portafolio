@@ -2,7 +2,9 @@ import { motion } from 'motion/react';
 import { Github, Linkedin, Mail, Download, FolderOpen } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import React from 'react';
+import { useLanguage } from '../i18n';
 export function Hero() {
+  const { t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -21,23 +23,23 @@ export function Hero() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl md:text-6xl mb-4">
-              <span className="block text-gray-300">Hola, soy</span>
+              <span className="block text-gray-300">{t.hero.greeting}</span>
               <span className="block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 Christopher Vera
               </span>
             </h1>
             <p className="text-2xl text-purple-300 mb-6">
-              Full Stack Developer
+                {t.hero.role}
             </p>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-              Soy Tecnólogo Superior en Desarrollo de Software, especializado en el desarrollo de aplicaciones web y en la implementación de backend, con experiencia en integraciones basadas en microservicios y microfrontends.
+              {t.hero.intro}
             </p>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
               <button onClick={() => scrollToSection('projects')} className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center gap-2">
                 <FolderOpen size={20} />
-                Ver Proyectos
+                {t.hero.projects}
               </button>
             </div>
 
